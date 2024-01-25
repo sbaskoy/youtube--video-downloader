@@ -1,0 +1,84 @@
+<div class="w-full h-full flex justify-center items-center">
+
+    <form class="w-1/3 h-5/6 bg-gray-700 rounded-lg p-6 gap-5 flex flex-col" method="post" action="/download">
+        <div class="w-full">
+            <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                File Type
+            </label>
+            <fieldset class="flex gap-5">
+                <legend class="sr-only">Type</legend>
+
+                <div class="flex items-center mb-4">
+                    <input id="country-option-1" type="radio" name="type" value="video"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                        checked>
+                    <label for="country-option-1"
+                        class="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">
+                        Video
+                    </label>
+                </div>
+
+                <div class="flex items-center mb-4">
+                    <input id="country-option-2" type="radio" name="type" value="audio"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="country-option-2"
+                        class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        Ses ( mp3)
+                    </label>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="w-full">
+            <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Quality
+            </label>
+            <fieldset class="flex gap-5">
+                <legend class="sr-only">Quality</legend>
+
+                <div class="flex items-center mb-4">
+                    <input id="country-option-1" type="radio" name="quality" value="highest"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                        checked>
+                    <label for="country-option-1"
+                        class="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">
+                        Highest
+                    </label>
+                </div>
+
+                <div class="flex items-center mb-4">
+                    <input id="country-option-2" type="radio" name="quality" value="lowest"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="country-option-2"
+                        class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                       Lowest
+                    </label>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class=" w-full">
+            <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Youtube video url
+            </label>
+            <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                        <path
+                            d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                        <path
+                            d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                    </svg>
+                </div>
+                <input type="text" id="email-address-icon" name="url"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="">
+            </div>
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Download
+        </button>
+    </form>
+
+</div>
