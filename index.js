@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config()
+
 const express = require('express');
 const ytdl = require('ytdl-core');
 const session = require('express-session');
