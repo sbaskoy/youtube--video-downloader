@@ -7,6 +7,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const expressLayouts = require('express-ejs-layouts');
+const ffmpeg = require('fluent-ffmpeg');
 
 const PORT = process.env.PORT || 1882;
 
@@ -37,6 +38,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/download', (req, res) => {
+
+    console.log(req.body);
+
     const downloadType = req.body.type || "video";
     const qualityType = req.body.quality || "lowest";
 
@@ -61,10 +65,15 @@ app.post('/download', (req, res) => {
             quality = "highestaudio"
         }
     }
-    const video = ytdl(url, {
-        quality: quality
-    });
+    console.log("quality ", quality)
     const fileName = downloadType == "video" ? "video.mp4" : "audio.mp3";
+    console.log("fileName ", fileName)
+    const video = ytdl(url, {
+        quality: quality,
+        filter: downloadType == "audio" ? "audioonly" : "videoandaudio"
+    });
+
+
     video.once('response', () => {
         res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
         video.pipe(res);
@@ -77,6 +86,7 @@ app.post('/download', (req, res) => {
     video.on('end', () => {
         console.log('Download completed');
     });
+
 
     //return res.redirect("/");
 })
